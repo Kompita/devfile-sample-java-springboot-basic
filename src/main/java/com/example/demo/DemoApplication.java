@@ -14,7 +14,8 @@ public class DemoApplication {
     @RequestMapping("/")
     String home() {
         Map<String,String> env =  System.getenv();
-        return "DATASOURCE_URL:" + System.getenv("DATASOURCE_URL"); + " - DATASOURCE_USR:" + System.getenv("DATASOURCE_USR");
+        String myenv = System.getenv("DATASOURCE_URL") + " - " + System.getenv("DATASOURCE_USR");
+        return "ENVIRONMENT: " + myenv;
     }
 
     public static void main(String[] args) {
